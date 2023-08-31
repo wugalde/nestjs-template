@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mypgdb/wugalde
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    ports:
+    - ${DBPG_PORT}:5432
+    environment:
+      POSTGRES_USER: ${DBPG_USER}
+      POSTGRES_PASSWORD: ${DBPG_PWD}
+      POSTGRES_DB: ${DBPG_NAME}
+      # PGDATA: ${PGDATA}
+    volumes:
+      - ./postgres:/var/lib/postgressql/data
