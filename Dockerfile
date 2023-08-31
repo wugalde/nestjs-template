@@ -4,4 +4,4 @@ LABEL author="Walter Ugalde A"
 LABEL description="Base de datos para proyecto nestjs"
 LABEL version="1.0"
 
-COPY ./sql/*.sql /docker-entrypoint-initdb.d/
+COPY ./db/sql/*.sql /docker-entrypoint-initdb.d/
